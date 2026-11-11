@@ -166,7 +166,7 @@ $('nativeShare').addEventListener('click', async () => {
       url: location.href,
     });
   } catch (error) {
-    if (error.name !== 'AbortError') toast('ไม่สามารถเปิดเมนูแชร์ได้');
+    if (error?.name !== 'AbortError') toast('ไม่สามารถเปิดเมนูแชร์ได้');
   }
 });
 $('sosOpen').addEventListener('click', () =>
@@ -436,4 +436,16 @@ const schoolPlans = {
 $('schoolPlanBtn').addEventListener('click', () => {
   const plan = schoolPlans[$('schoolFocus').value];
   $('schoolPlanOutput').textContent = 'แผนตัวอย่าง 4 สัปดาห์\n' + plan.join('\n') + '\n\nผู้รับผิดชอบควรได้รับมอบหมายก่อนเริ่มดำเนินงาน แผนนี้เป็นแม่แบบ ไม่ใช่การแจ้งเหตุหรือส่งงานอัตโนมัติ';
+});
+
+
+// Last-resort browser error reporting: keep the prototype usable and surface a safe message.
+window.addEventListener('unhandledrejection', event => {
+  console.error('TeenShield unhandled promise rejection:', event.reason);
+  event.preventDefault();
+  if ($('toast')) toast('เกิดข้อผิดพลาดชั่วคราว กรุณาลองอีกครั้ง');
+});
+window.addEventListener('error', event => {
+  console.error('TeenShield runtime error:', event.error || event.message);
+  if ($('toast')) toast('มีข้อผิดพลาดในหน้าจอ กรุณารีเฟรชหรือลองอีกครั้ง');
 });
