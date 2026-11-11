@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TeenShield — พื้นที่ปลอดภัยของวัยรุ่น</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <section id="loginPage" class="page login">
+        <div class="orb pink"></div>
+        <div class="orb purple"></div>
+        <div class="brand">
+          <div class="logo">🛡️</div>
+          <h1>Teen<span>Shield</span></h1>
+          <p>พื้นที่ปลอดภัย เข้าใจวัยรุ่น</p>
+        </div>
+        <form id="loginForm" class="glass login-card">
+          <h2>ยินดีต้อนรับ</h2>
+          <p class="muted center">เข้าสู่พื้นที่เรียนรู้แบบทดลอง</p>
+          <label
+            >ชื่อเล่น<input
+              id="nickname"
+              maxlength="24"
+              placeholder="อยากให้เราเรียกว่าอะไร"
+              required
+          /></label>
+          <button class="primary full">เริ่มต้นใช้งาน →</button>
+          <p class="fine">
+            โหมดทดลองเท่านั้น ไม่ต้องกรอกชื่อ-นามสกุลหรือข้อมูลระบุตัวบุคคล
+            ยังไม่มีระบบบัญชีจริง
+          </p>
+        </form>
+        <p class="privacy">🔒 ข้อมูลในเดโมนี้ไม่ถูกส่งไปยังเซิร์ฟเวอร์</p>
+      </section>
+      <section id="homePage" class="page hidden">
+        <header>
+          <div class="user">
+            <span>🛡️</span>
+            <div>
+              <b id="helloName">สวัสดี!</b
+              ><small>พื้นที่ของคุณ · โหมดทดลอง</small>
+            </div>
+          </div>
+          <div>
+            <button id="shareOpen" class="round">↗</button>
+            <button id="sosOpen" class="round sos">SOS</button>
+          </div>
+        </header>
+        <main class="content">
+          <article class="glass hero">
+            <div>
+              <small>YOU ARE NOT ALONE</small>
+              <h2>วันนี้เป็นยังไงบ้าง?</h2>
+              <p>ไม่ต้องเก่งตลอดเวลาก็ได้นะ ค่อย ๆ ดูแลตัวเองไปด้วยกัน</p>
+            </div>
+            <span>🌙</span>
+          </article>
+          <section>
+            <div class="section-title">
+              <h3>บริการสุขภาพวัยรุ่น</h3>
+              <small>🔐 พื้นที่ส่วนตัว</small>
+            </div>
+            <div class="services">
+              <button class="service blue" data-modal="supplyModal">
+                <span>📦</span><b>อุปกรณ์ป้องกัน</b
+                ><small>ข้อมูลและช่องทางรับบริการ</small>
+              </button>
+              <button class="service rose" data-modal="periodModal">
+                <span>🩸</span><b>บันทึกรอบเดือน</b
+                ><small>บันทึกชั่วคราวในหน้านี้</small>
+              </button>
+              <button class="service green" data-modal="consultModal">
+                <span>🩺</span><b>ปรึกษาพยาบาล</b
+                ><small>เตรียมเรื่องที่อยากปรึกษา</small>
+              </button>
+            </div>
+          </section>
+          <section class="innovation-section">
+            <div class="section-title">
+              <h3>TeenShield Lab · พื้นที่ลองใช้ชีวิต</h3>
+              <small>ไม่ตัดสิน ไม่แข่งขัน</small>
+            </div>
+            <div class="feature-grid">
+              <button class="feature-card pulse-card" data-modal="pulseModal">
+                <span>💗</span><b>Pulse 60</b><small>เช็กอินใจและความปลอดภัยใน 1 นาที</small>
+              </button>
+              <button class="feature-card safe-card" data-modal="safeSignalModal">
+                <span>🛟</span><b>SafeSignal</b><small>เตรียมขอความช่วยเหลือในแบบของเรา</small>
+              </button>
+              <button class="feature-card quest-card" data-open-page="questPage">
+                <span>🎮</span><b>LifeQuest</b><small>ฝึกตัดสินใจจากสถานการณ์วัยรุ่น</small>
+              </button>
+              <button class="feature-card circle-card" data-modal="myCircleModal">
+                <span>🫶</span><b>MyCircle</b><small>เลือกคนที่ไว้ใจและเริ่มบทสนทนา</small>
+              </button>
+              <button class="feature-card care-card" data-open-page="carePage">
+                <span>🏫</span><b>Care Hub</b><small>คู่มือร่วมดูแลของวัยรุ่น บ้าน และโรงเรียน</small>
+              </button>
+              <button class="feature-card learn-card" data-open-page="learnPage">
+                <span>✨</span><b>Skill-up</b><small>ทักษะชีวิต ความสัมพันธ์ และโลกออนไลน์</small>
+              </button>
+            </div>
+            <article class="glass care-loop">
+              <small>TEENSHIELD CARE LOOP</small>
+              <div class="loop-steps"><b>สังเกต</b><i>→</i><b>เลือก</b><i>→</i><b>เชื่อมคนช่วย</b><i>→</i><b>ติดตาม</b></div>
+              <p>เริ่มจากเรื่องเล็ก ๆ ได้ ไม่จำเป็นต้องเล่าทุกอย่าง และคุณเลือกได้ว่าจะคุยกับใคร</p>
+            </article>
+          </section>
+          <article class="glass sky">
+            <div>
+              <small>YOUR SUPPORT BUDDY</small>
+              <h3>🤖 AI BFF <em>Sky</em></h3>
+              <p>
+                อยากระบายหรือหาวิธีรับมือกับความเครียด?
+                เริ่มจากเช็กอินความรู้สึกได้เลย
+              </p>
+              <button id="checkinOpen" class="small-primary">
+                เช็กอินความรู้สึก →
+              </button>
+            </div>
+            <span>☁️</span>
+          </article>
+          <article class="glass whisper">
+            <div class="section-title">
+              <h3>🌌 หลุมดำระบายอารมณ์</h3>
+              <small>LET IT GO</small>
+            </div>
+            <p>
+              พิมพ์สิ่งที่อยากปล่อยวาง ข้อความจะถูกล้างจากหน้าจอ ไม่บันทึกลงระบบ
+            </p>
+            <div class="input-row">
+              <input
+                id="whisperText"
+                maxlength="240"
+                placeholder="วันนี้มีอะไรค้างอยู่ในใจ..."
+              /><button id="throwBtn">➤</button>
+            </div>
+            <small id="voidFeedback" class="feedback"></small>
+          </article>
+          <article class="glass reward">
+            <span>🎁</span>
+            <div>
+              <b>กล่องกำลังใจ</b>
+              <p>รับข้อความดี ๆ ให้ตัวเอง</p>
+            </div>
+            <button id="rewardOpen">→</button>
+          </article>
+          <article class="notice">
+            <b>หมายเหตุสำคัญ</b>
+            <p>
+              TeenShield รุ่นนี้เป็นต้นแบบ ยังไม่ใช่บริการทางการแพทย์
+              ไม่ได้เชื่อมต่อ AI หรือเจ้าหน้าที่จริง
+              และไม่ควรใช้แทนการขอความช่วยเหลือฉุกเฉิน
+            </p>
+          </article>
+        </main>
+        <nav class="nav">
+          <button class="active" data-page="homePage">
+            ⌂<small>หน้าหลัก</small></button
+          ><button data-page="learnPage">✧<small>ความรู้</small></button
+          ><button id="checkinNav" class="center-nav">♡</button
+          ><button data-page="supportPage">☏<small>ช่วยเหลือ</small></button
+          ><button data-page="profilePage">☻<small>โปรไฟล์</small></button>
+        </nav>
+      </section>
+      <section id="learnPage" class="page hidden sub">
+        <header>
+          <button data-back>←</button>
+          <h2>คลังความรู้</h2>
+        </header>
+        <main class="content">
+          <article class="glass info">
+            <span>🧡</span>
+            <h3>ความสัมพันธ์ที่เคารพกัน</h3>
+            <p>
+              ความยินยอมต้องสมัครใจ ชัดเจน และเปลี่ยนใจได้เสมอ
+              คุณมีสิทธิ์ปฏิเสธโดยไม่ต้องรู้สึกผิด
+            </p>
+          </article>
+          <article class="glass info">
+            <span>🛡️</span>
+            <h3>การป้องกันการตั้งครรภ์และโรคติดต่อ</h3>
+            <p>
+              ถุงยางอนามัยช่วยลดความเสี่ยงการตั้งครรภ์และโรคติดต่อทางเพศสัมพันธ์
+              ควรใช้ให้ถูกวิธีทุกครั้ง
+              และปรึกษาบุคลากรสุขภาพเพื่อเลือกวิธีที่เหมาะสม
+            </p>
+          </article>
+          <article class="glass info">
+            <span>🌱</span>
+            <h3>ดูแลใจในวันที่หนัก</h3>
+            <p>
+              ลองหายใจช้า ๆ ติดต่อคนที่ไว้ใจ
+              หากรู้สึกไม่ปลอดภัยหรือเสี่ยงทำร้ายตัวเอง
+              ให้ขอความช่วยเหลือจากคนใกล้ตัวหรือบริการฉุกเฉินทันที
+            </p>
+          </article>
+        </main>
+      </section>
+      <section id="supportPage" class="page hidden sub">
+        <header>
+          <button data-back>←</button>
+          <h2>ขอความช่วยเหลือ</h2>
+        </header>
+        <main class="content">
+          <article class="glass info">
+            <h3>คุณไม่จำเป็นต้องรับมือคนเดียว</h3>
+            <p>
+              หากต้องการคำแนะนำด้านสุขภาพ ให้ติดต่อ รพ.สต.
+              หรือสถานพยาบาลใกล้บ้านโดยตรง แอปเดโมนี้ยังไม่ส่งคำขอถึงเจ้าหน้าที่
+            </p>
+            <button class="primary full" data-modal="consultModal">
+              เตรียมเรื่องปรึกษาพยาบาล
+            </button>
+          </article>
+          <article class="glass info">
+            <h3>ช่องทางเร่งด่วนในประเทศไทย</h3>
+            <p>
+              <b>1669</b> <a class="hotline-link" href="tel:1669">การแพทย์ฉุกเฉิน</a> · <b>191</b> <a class="hotline-link" href="tel:191">เหตุด่วนเหตุร้าย</a> ·
+              <b>1323</b> <a class="hotline-link" href="tel:1323">สายด่วนสุขภาพจิต</a> ·
+              <b>1387</b> <a class="hotline-link" href="tel:1387">สายเด็ก (สำหรับเด็กและเยาวชนอายุไม่เกิน 18 ปี)</a>
+            </p>
+            <p class="fine">
+              หากกำลังตกอยู่ในอันตราย
+              ให้ไปยังที่ปลอดภัยและติดต่อบริการฉุกเฉินหรือผู้ใหญ่ที่ไว้ใจได้ทันที
+            </p>
+          </article>
+        </main>
+      </section>
+      <section id="profilePage" class="page hidden sub">
+        <header>
+          <button data-back>←</button>
+          <h2>โปรไฟล์</h2>
+        </header>
+        <main class="content">
+          <article class="glass info center">
+            <div class="avatar">☺</div>
+            <h3 id="profileName">ผู้ใช้งาน</h3>
+            <p>บัญชีทดลองบนอุปกรณ์นี้</p>
+            <p>สถานะ: Demo / Local only</p>
+            <p>ข้อมูลส่วนตัวไม่ซิงก์ขึ้นคลาวด์</p>
+            <button id="logoutBtn" class="outline full">ออกจากโหมดทดลอง</button>
+          </article>
+        </main>
+      <section id="questPage" class="page hidden sub">
+        <header>
+          <button data-back aria-label="กลับหน้าหลัก">←</button>
+          <h2>🎮 LifeQuest · ภารกิจชีวิตจริง</h2>
+        </header>
+        <main class="content">
+          <article class="glass quest-intro">
+            <small>REAL-LIFE SKILLS · NO LEADERBOARD</small>
+            <h3>ซ้อมคิดก่อนเจอสถานการณ์จริง</h3>
+            <p>เลือกทางที่คุณคิดว่าเหมาะ แล้วดูผลลัพธ์ที่อาจเกิดขึ้น ไม่มีคะแนน ไม่มีการจัดอันดับ และไม่มีการเก็บคำตอบของคุณ</p>
+          </article>
+          <article class="glass quest-board">
+            <div class="quest-meta"><span id="questNumber">ภารกิจ 1 / 5</span><span id="questCategory">เพื่อนและการกลั่นแกล้ง</span></div>
+            <div class="quest-progress"><span id="questProgress"></span></div>
+            <h3 id="questTitle">สถานการณ์</h3>
+            <p id="questPrompt">กดเริ่มภารกิจเพื่อเริ่มต้น</p>
+            <div id="questChoices" class="quest-choices"></div>
+            <div id="questFeedback" class="action-result" aria-live="polite">ลองคิดจากสิ่งที่ปลอดภัย เคารพสิทธิ และขอความช่วยเหลือได้</div>
+            <button id="questNext" class="primary full" disabled>สถานการณ์ถัดไป →</button>
+            <button id="questRestart" class="outline full">เริ่มชุดภารกิจใหม่</button>
+          </article>
+          <article class="notice">
+            <b>จำไว้</b>
+            <p>สถานการณ์จำลองไม่สามารถแทนคำแนะนำเฉพาะกรณี หากเรื่องที่เกิดขึ้นจริงทำให้คุณไม่ปลอดภัย ให้ติดต่อผู้ใหญ่ที่ไว้ใจหรือช่องทางช่วยเหลือ</p>
+          </article>
+        </main>
+      </section>
+      <section id="carePage" class="page hidden sub">
+        <header>
+          <button data-back aria-label="กลับหน้าหลัก">←</button>
+          <h2>🏫 Care Hub · เครือข่ายดูแลวัยรุ่น</h2>
+        </header>
+        <main class="content">
+          <article class="glass quest-intro">
+            <small>ONE COMMUNITY · MANY SAFE DOORS</small>
+            <h3>ช่วยกันสร้างพื้นที่ที่วัยรุ่นกล้าขอความช่วยเหลือ</h3>
+            <p>เลือกบทบาทเพื่อดูแนวทางที่ทำได้จริง ทุกคนมีหน้าที่รับฟัง ไม่ตีตรา และส่งต่ออย่างเหมาะสม</p>
+          </article>
+          <div class="care-tabs" role="tablist" aria-label="เลือกแนวทางตามบทบาท">
+            <button class="active" data-care-role="teen">วัยรุ่น</button>
+            <button data-care-role="family">ครอบครัว</button>
+            <button data-care-role="school">โรงเรียน</button>
+            <button data-care-role="community">ชุมชน</button>
+          </div>
+          <section class="glass care-panel" data-care-panel="teen">
+            <h3>สำหรับวัยรุ่น · คุณมีสิทธิ์เลือก</h3>
+            <div class="step-list">
+              <p><b>1. เริ่มจากเรื่องที่อยากแก้</b><br>ไม่จำเป็นต้องเล่าทุกอย่างในครั้งแรก</p>
+              <p><b>2. เลือกผู้ใหญ่ที่ปลอดภัย</b><br>อาจเป็นครูแนะแนว พยาบาล ผู้ปกครอง ญาติ หรือคนที่คุณไว้ใจ</p>
+              <p><b>3. ขอสิ่งที่ต้องการให้ชัด</b><br>เช่น ขอให้รับฟังก่อน ช่วยวางแผน หรือพาไปพบผู้เชี่ยวชาญ</p>
+              <p><b>4. บอกได้เมื่อยังไม่พร้อม</b><br>คุณถามได้ว่าใครจะรับรู้ข้อมูล และจะส่งต่ออย่างไร</p>
+            </div>
+          </section>
+          <section class="glass care-panel hidden" data-care-panel="family">
+            <h3>สำหรับพ่อแม่และผู้ดูแล · ฟังก่อนแก้</h3>
+            <p>ลองเริ่มด้วยคำถามที่ไม่กล่าวโทษ และเปิดโอกาสให้วัยรุ่นเลือกว่าจะเล่าแค่ไหน</p>
+            <label class="field-label" for="familyTopic">หัวข้อที่อยากเริ่มคุย</label>
+            <select id="familyTopic" class="dark-select">
+              <option value="stress">ความเครียดและการเรียน</option>
+              <option value="online">การใช้มือถือและความปลอดภัยออนไลน์</option>
+              <option value="relationship">ความสัมพันธ์และขอบเขตส่วนตัว</option>
+              <option value="health">สุขภาพกายและสุขภาพทางเพศ</option>
+              <option value="conflict">ความขัดแย้งในครอบครัว</option>
+            </select>
+            <button id="familyBuild" class="primary full">สร้างประโยคชวนคุย</button>
+            <div id="familyResult" class="action-result" aria-live="polite">ตัวอย่างบทสนทนาจะแสดงตรงนี้</div>
+            <p class="fine">หลีกเลี่ยงการข่มขู่ ยึดโทรศัพท์ หรือบังคับให้เปิดเผยรายละเอียดเป็นเงื่อนไขของการรับความช่วยเหลือ</p>
+          </section>
+          <section class="glass care-panel hidden" data-care-panel="school">
+            <h3>สำหรับโรงเรียน · Notice → Safe → Listen → Refer → Follow-up</h3>
+            <div class="step-list">
+              <p><b>สังเกต (Notice)</b><br>รับฟังสัญญาณที่นักเรียนสื่อสาร โดยไม่ตีตราหรือตั้งฉายา</p>
+              <p><b>ทำให้ปลอดภัย (Safe)</b><br>แยกออกจากสถานการณ์เสี่ยงและคุ้มครองศักดิ์ศรี</p>
+              <p><b>รับฟัง (Listen)</b><br>ไม่ซักไซ้ซ้ำ ไม่กล่าวโทษ และไม่สัญญาว่าจะเก็บเป็นความลับทุกกรณี</p>
+              <p><b>ส่งต่อ (Refer)</b><br>ประสานผู้รับผิดชอบตามแนวทางคุ้มครองเด็กและระบบบริการในพื้นที่</p>
+              <p><b>ติดตาม (Follow-up)</b><br>กำหนดผู้ประสานงานและตรวจว่าความช่วยเหลือเกิดขึ้นจริง</p>
+            </div>
+            <label class="field-label" for="schoolFocus">เลือกหัวข้อเพื่อสร้างแผนป้องกันในโรงเรียน</label>
+            <select id="schoolFocus" class="dark-select">
+              <option value="bullying">การกลั่นแกล้งและความรุนแรง</option>
+              <option value="mental">สุขภาพใจและความเครียด</option>
+              <option value="online">ความปลอดภัยออนไลน์ / Cyberbullying</option>
+              <option value="sexual">เพศวิถี ความยินยอม และการตั้งครรภ์</option>
+              <option value="substance">บุหรี่ไฟฟ้า แอลกอฮอล์ และสารเสพติด</option>
+              <option value="attendance">การขาดเรียนและการหลุดจากระบบ</option>
+            </select>
+            <button id="schoolPlanBtn" class="primary full">สร้างแผนป้องกัน 4 สัปดาห์</button>
+            <div id="schoolPlanOutput" class="action-result" aria-live="polite">แผนปฏิบัติการจะปรากฏตรงนี้</div>
+          </section>
+          <section class="glass care-panel hidden" data-care-panel="community">
+            <h3>สำหรับชุมชน · ไม่มีวัยรุ่นคนไหนต้องรับมือคนเดียว</h3>
+            <div class="step-list">
+              <p><b>รพ.สต. / หน่วยบริการสุขภาพ</b><br>ให้บริการที่เป็นมิตร ประเมิน ให้คำปรึกษา และส่งต่อ</p>
+              <p><b>อสม. และผู้นำชุมชน</b><br>สื่อสารช่องทางช่วยเหลือโดยเคารพความเป็นส่วนตัว ไม่เปิดเผยเรื่องส่วนตัวในที่สาธารณะ</p>
+              <p><b>โรงเรียนและครอบครัว</b><br>ร่วมวางแผนดูแล โดยให้วัยรุ่นมีส่วนร่วมและรับรู้เท่าที่จำเป็น</p>
+              <p><b>ระบบติดตาม</b><br>ใช้ข้อมูลภาพรวมเพื่อปรับบริการ ไม่ติดตามพฤติกรรมรายบุคคลหรือจัดอันดับความเสี่ยงนักเรียน</p>
+            </div>
+          </section>
+          <article class="notice">
+            <b>ข้อกำกับด้านข้อมูล</b>
+            <p>หน้านี้เป็นคู่มือและเครื่องมือสร้างบทสนทนาในเครื่อง ไม่ใช่ระบบรับแจ้งเหตุของโรงเรียน ยังไม่มี dashboard รายบุคคลหรือการส่งต่อจริง การทำระบบจริงต้องกำหนดผู้รับผิดชอบ สิทธิ์เข้าถึง การยินยอม การเก็บรักษาและลบข้อมูล ตลอดจนแนวทางคุ้มครองเด็กก่อน</p>
+          </article>
+        </main>
+      </section>
+    </div>
+    <div id="supplyModal" class="modal">
+      <div class="modal-card">
+        <button class="close" data-close>×</button><span>📦</span>
+        <h2>อุปกรณ์ป้องกัน</h2>
+        <p>ข้อมูลตัวอย่างสำหรับเตรียมเข้ารับบริการจริง</p>
+        <label
+          >สนใจข้อมูลเกี่ยวกับ<select id="supplyItem">
+            <option>ถุงยางอนามัย</option>
+            <option>ยาคุมกำเนิด</option>
+            <option>ทั้งสองรายการ</option>
+          </select></label
+        ><label
+          >ช่องทางที่สะดวก<select>
+            <option>สอบถามที่ รพ.สต.</option>
+            <option>ห้องพยาบาลโรงเรียน</option>
+          </select></label
+        >
+        <p class="fine">ปุ่มนี้ไม่ส่งคำขอหรือข้อมูลส่วนตัว</p>
+        <button id="supplySubmit" class="primary full">ดูขั้นตอนถัดไป</button
+        ><small id="supplyFeedback" class="feedback"></small>
+      </div>
+    </div>
+    <div id="periodModal" class="modal">
+      <div class="modal-card">
+        <button class="close" data-close>×</button><span>🩸</span>
+        <h2>บันทึกรอบเดือน</h2>
+        <p>เลือกวันแรกของรอบเดือน ข้อมูลอยู่ในหน่วยความจำของหน้านี้เท่านั้น</p>
+        <label>วันแรกของรอบเดือน<input id="periodDate" type="date" /></label
+        ><button id="periodSubmit" class="primary full">บันทึกในหน้านี้</button
+        ><small id="periodFeedback" class="feedback"></small>
+      </div>
+    </div>
+    <div id="consultModal" class="modal">
+      <div class="modal-card">
+        <button class="close" data-close>×</button><span>🩺</span>
+        <h2>เตรียมเรื่องปรึกษาพยาบาล</h2>
+        <p>เลือกหัวข้อเพื่อดูคำแนะนำ แอปยังไม่ได้ส่งคิวให้เจ้าหน้าที่</p>
+        <label
+          >หัวข้อที่อยากปรึกษา<select id="consultTopic">
+            <option>กังวลเรื่องตั้งครรภ์ / คุมกำเนิด</option>
+            <option>ความเครียด / สุขภาพใจ</option>
+            <option>ความสัมพันธ์ / ความปลอดภัย</option>
+            <option>เรื่องสุขภาพอื่น ๆ</option>
+          </select></label
+        ><button id="consultSubmit" class="primary full">แสดงคำแนะนำ</button
+        ><small id="consultFeedback" class="feedback"></small>
+      </div>
+    </div>
+    <div id="checkinModal" class="modal">
+      <div class="modal-card">
+        <button class="close" data-close>×</button><span>☁️</span>
+        <h2>Sky อยากฟังนะ</h2>
+        <p>เลือกความรู้สึกตอนนี้ เพื่อรับข้อความดูแลใจแบบออฟไลน์</p>
+        <div class="moods">
+          <button data-mood="เหนื่อย">😮‍💨<small>เหนื่อย</small></button
+          ><button data-mood="เศร้า">🥺<small>เศร้า</small></button
+          ><button data-mood="กังวล">😟<small>กังวล</small></button
+          ><button data-mood="โอเค">😊<small>โอเค</small></button>
+        </div>
+        <div id="moodFeedback" class="response">
+          เลือกความรู้สึกที่ตรงกับตอนนี้ได้เลย
+        </div>
+        <p class="fine">
+          Sky ในรุ่นนี้เป็นชุดข้อความตัวอย่าง ไม่ใช่ AI
+          และไม่มีเจ้าหน้าที่อ่านข้อความนี้
+        </p>
+      </div>
+    </div>
+    <div id="rewardModal" class="modal">
+      <div class="modal-card">
+        <button class="close" data-close>×</button><span>🎁</span>
+        <h2>กล่องกำลังใจ</h2>
+        <div id="rewardMessage" class="response">
+          คุณมีคุณค่า แม้ในวันที่ทำอะไรไม่สำเร็จเลยก็ตาม
+        </div>
+        <button id="newReward" class="primary full">สุ่มข้อความใหม่</button>
+      </div>
+    </div>
+    <div id="shareModal" class="modal">
+      <div class="modal-card">
+        <button class="close" data-close>×</button><span>🔗</span>
+        <h2>แชร์ TeenShield</h2>
+        <p>แชร์ลิงก์แอปที่เปิดอยู่ในขณะนี้</p>
+        <img id="shareQr" class="qr" alt="QR Code" /><input
+          id="shareUrl"
+          readonly
+        /><button id="copyShare" class="primary full">คัดลอกลิงก์</button
+        ><button id="nativeShare" class="outline full">แชร์ผ่านแอปอื่น</button>
+      </div>
+    </div>
+    <div id="pulseModal" class="modal">
+      <div class="modal-card">
+        <button class="close" data-close aria-label="ปิด">×</button><span>💗</span>
+        <h2>Pulse 60 · เช็กอินตัวเอง</h2>
+        <p>ใช้เวลาประมาณ 1 นาที ไม่มีคะแนน ไม่มีการวินิจฉัย และไม่บันทึกคำตอบ</p>
+        <p class="field-label">ตอนนี้รู้สึกใกล้เคียงกับข้อไหนที่สุด?</p>
+        <div class="moods pulse-moods">
+          <button data-pulse-mood="เหนื่อย">😮‍💨<small>เหนื่อย</small></button>
+          <button data-pulse-mood="กังวล">😟<small>กังวล</small></button>
+          <button data-pulse-mood="เศร้า">🥺<small>เศร้า</small></button>
+          <button data-pulse-mood="โอเค">😊<small>โอเค</small></button>
+        </div>
+        <label class="field-label" for="pulseStress">ระดับความตึงเครียดตอนนี้</label>
+        <select id="pulseStress" class="dark-select">
+          <option value="1">1 · สบาย ๆ</option><option value="2">2 · นิดหน่อย</option>
+          <option value="3" selected>3 · ปานกลาง</option><option value="4">4 · ค่อนข้างมาก</option>
+          <option value="5">5 · หนักมาก</option>
+        </select>
+        <label class="field-label" for="pulseSafety">ตอนนี้คุณรู้สึกปลอดภัยหรือไม่?</label>
+        <select id="pulseSafety" class="dark-select">
+          <option value="safe">รู้สึกปลอดภัย</option>
+          <option value="unsure">ยังไม่แน่ใจ / อยากมีคนอยู่ด้วย</option>
+          <option value="unsafe">ไม่ปลอดภัยตอนนี้</option>
+          <option value="selfharm">กลัวว่าจะทำร้ายตัวเอง</option>
+        </select>
+        <button id="pulseSubmit" class="primary full">ดูแนวทางดูแลตัวเอง</button>
+        <div id="pulseFeedback" class="action-result" aria-live="polite">คำตอบจะแสดงตรงนี้ และจะไม่ถูกส่งให้ใคร</div>
+        <p class="fine">หากไม่ปลอดภัย ให้ไปอยู่กับคนที่ไว้ใจหรือพื้นที่ปลอดภัยทันที อย่ารอใช้แอปแทนการขอความช่วยเหลือ</p>
+      </div>
+    </div>
+    <div id="safeSignalModal" class="modal">
+      <div class="modal-card">
+        <button class="close" data-close aria-label="ปิด">×</button><span>🛟</span>
+        <h2>SafeSignal · ขอความช่วยเหลือในแบบของเรา</h2>
+        <p>เลือกหัวข้อและระดับความเร่งด่วน เพื่อสร้างประโยคเริ่มคุย ไม่ต้องพิมพ์ชื่อ ที่อยู่ หรือรายละเอียดส่วนตัว</p>
+        <label class="field-label" for="safeTopic">เรื่องที่อยากให้ช่วย</label>
+        <select id="safeTopic" class="dark-select">
+          <option>การกลั่นแกล้ง / ความรุนแรง</option>
+          <option>การคุกคามทางออนไลน์ / ถูกข่มขู่</option>
+          <option>ความสัมพันธ์ / ถูกกดดัน</option>
+          <option>ความเครียด / สุขภาพใจ</option>
+          <option>ปัญหาที่บ้าน / โรงเรียน</option>
+          <option>สุขภาพทางเพศ / การตั้งครรภ์</option>
+          <option>เรื่องอื่น ๆ ที่ยังไม่พร้อมบอก</option>
+        </select>
+        <label class="field-label" for="safeUrgency">ตอนนี้ต้องการความช่วยเหลือระดับไหน?</label>
+        <select id="safeUrgency" class="dark-select">
+          <option value="today">อยากคุยกับคนที่ไว้ใจภายในวันนี้</option>
+          <option value="info">ต้องการข้อมูลก่อน ยังไม่พร้อมคุย</option>
+          <option value="now">ไม่ปลอดภัยตอนนี้ / อาจเกิดอันตราย</option>
+        </select>
+        <button id="safeBuild" class="primary full">สร้างข้อความเริ่มคุย</button>
+        <div id="safeResult" class="action-result hidden" aria-live="polite">ข้อความของคุณ</div>
+        <button id="safeCopy" class="outline full hidden">คัดลอกข้อความ</button>
+        <p class="fine">ระบบนี้ไม่ส่งข้อความ ไม่แจ้งครูหรือผู้ปกครอง และไม่ใช่ช่องทางรับแจ้งเหตุฉุกเฉิน</p>
+      </div>
+    </div>
+    <div id="myCircleModal" class="modal">
+      <div class="modal-card">
+        <button class="close" data-close aria-label="ปิด">×</button><span>🫶</span>
+        <h2>MyCircle · คนที่ฉันไว้ใจ</h2>
+        <p>คุณไม่ต้องเปิดเผยชื่อหรือเบอร์โทรในแอป แค่คิดถึงคนที่รับฟังและทำให้คุณรู้สึกปลอดภัย</p>
+        <label class="field-label" for="circleRole">อยากเริ่มคุยกับใคร?</label>
+        <select id="circleRole" class="dark-select">
+          <option>พ่อแม่ / ผู้ปกครอง</option><option>ญาติหรือพี่ที่ไว้ใจ</option>
+          <option>ครูแนะแนว / ครูที่ไว้ใจ</option><option>พยาบาล / บุคลากรสุขภาพ</option>
+          <option>เพื่อนที่เป็นผู้ใหญ่พอจะช่วยพาไปหาคนช่วย</option>
+        </select>
+        <label class="field-label" for="circleTopic">อยากเริ่มต้นด้วยเรื่องอะไร?</label>
+        <select id="circleTopic" class="dark-select">
+          <option>อยากให้รับฟังโดยยังไม่ตัดสิน</option><option>กำลังรู้สึกไม่ปลอดภัย</option>
+          <option>อยากขอคำปรึกษาเรื่องสุขภาพ</option><option>มีปัญหาที่โรงเรียนหรือออนไลน์</option>
+          <option>เครียดและอยากให้ช่วยคิดทางออก</option>
+        </select>
+        <button id="circleBuild" class="primary full">ช่วยร่างประโยคให้หน่อย</button>
+        <div id="circleMessage" class="action-result" aria-live="polite">ประโยคเริ่มคุยจะแสดงตรงนี้</div>
+        <button id="circleCopy" class="outline full">คัดลอกประโยค</button>
+      </div>
+    </div>
+    <div id="sosScreen" class="sos-screen hidden">
+      <div class="calc-display">
+        <small>Calculator</small><output id="calcDisplay">0</output>
+      </div>
+      <div class="calc-grid">
+        <button data-calc="AC" class="fn">AC</button
+        ><button data-calc="sign" class="fn">+/−</button
+        ><button data-calc="%" class="fn">%</button
+        ><button data-calc="/" class="op">÷</button>
+        <button data-calc="7">7</button><button data-calc="8">8</button
+        ><button data-calc="9">9</button
+        ><button data-calc="*" class="op">×</button>
+        <button data-calc="4">4</button><button data-calc="5">5</button
+        ><button data-calc="6">6</button
+        ><button data-calc="-" class="op">−</button>
+        <button data-calc="1">1</button><button data-calc="2">2</button
+        ><button data-calc="3">3</button
+        ><button data-calc="+" class="op">+</button>
+        <button data-calc="0" class="zero">0</button
+        ><button data-calc=".">.</button
+        ><button data-calc="=" class="op">=</button>
+      </div>
+      <button id="exitSos" class="exit">กลับสู่ TeenShield</button>
+    </div>
+    <div id="toast" class="toast" role="status"></div>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
